@@ -63,7 +63,7 @@ def metrics():
     # Prometheus scrapes this endpoint
     return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)
 
-@app.get("/health")
+@app.get("/healthz")
 def health():
     return {"status": "ok", "uptime_s": time.time() - start_time}
 
@@ -72,10 +72,6 @@ def work(n: str):
     if n:
         return {"email":"23ds1000074@ds.study.iitm.ac.in", "done": n}
     return {}
-
-@app.get("/health")
-def health():
-    return {"status": "ok"}
 
 @app.get("/logs/tail")
 async def logs_tail(limit: int = Query(10, ge=1)):
