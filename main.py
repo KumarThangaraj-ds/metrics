@@ -70,7 +70,7 @@ def health():
 @app.get("/work")
 def work(n: str):
     if n:
-        return {"email":"23ds", "done": n}
+        return {"email":"23ds1000074@ds.study.iitm.ac.in", "done": n}
     return {}
 
 @app.get("/health")
